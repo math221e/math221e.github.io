@@ -1,3 +1,52 @@
-<h1>Agilent 2000 Bode plotter</h1>
+<html>
+	<head>
+		<title>Bode plotter</title>
+		<style type="text/css">
+			body {
+				color: lavender;
+				width: 800px;
+				margin: 20px auto;
+			}
+		</style>
+	</head>
+	<body>
 
-<a href="bode-plotter-v1.exe" download>Download</a>
+	<h1>Agilent 2000 Bode plotter</h1>
+
+	<a href="bode-plotter-v1.exe" download>Download</a>
+
+	"Bode plotter" er kompitabel med Agilient Technologies "InfiniiVision, DSO-X 2024A"
+
+	<hr />
+
+	<h2>OPSÆTNING OG ANVENDELSE</h2>
+
+	Forbind wavegen til kredsløb
+	Forbind Probe 1 til udgang (målte spænding)
+	Forbind Probe 2 til indgang (ofte der hvor wavegen er forbundet)
+	Forbind med USB A fra pc til USB B (næsten kvadratisk) bagpå oscilloskop
+	Tænd proberne og wavegen
+	Evt. set Acquire Mode til averaging på fx #2, hvilket giver bedre opløsning på data, men tager lidt længere tid for at lave målingerne
+
+	Åben Bode plotter
+	Indsæt værdierne i de relevante felter
+		Se programmet
+	Afkryds felt for csv-fil, hvis dette ønskes
+		csv-fil gemmes i ???
+	Transferfunction/TF/overførselsfunktion er valgfri, hvor fx den teoretisk beregnede tf kan indsættes.
+		Indsættes på formen: 	Tæller: [Xs^2,Xs,X]
+					Nævner: [Xs^2,Xs,X]
+			Med højeste orden af s til venstre ned til s^0=1 helt til højre i firkantparantesen (ligesom MatLab).
+
+	TRYK START
+		Bode plotter tænker og skrive den aktuelle frekvens, som også kan aflæses på oscilloskopet
+		Der laves de graf over amplitude og fase i et nyt vindue; samt evt. csv-fil
+
+
+	? For at slå tf fra kan man skrive Tæller: [1] og Nævner: [1, 1]. Ellers har Tæller: [1] og Nævner: [1] ikke nogen overførselsfunktion som funktion af s/w
+
+
+
+	Bode-Plotter kan først lukkes, når alle dets grafer er lukket
+	</body>
+</html>
