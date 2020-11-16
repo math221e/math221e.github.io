@@ -1,52 +1,95 @@
 <html>
 	<head>
 		<title>Bode plotter</title>
+		<meta charset="utf-8">
 		<style type="text/css">
 			body {
-				color: lavender;
+				background-color: lavender;
 				width: 800px;
 				margin: 20px auto;
 			}
+			.container {
+				display: flex;
+			}
+
+			.left {
+				flex: 1;
+			}
+			.right {
+				width: 300px;
+			}
 		</style>
+		<script type="text/javascript"> <!--
+    function UnCryptMailto( s )
+    {
+        var n = 0;
+        var r = "";
+        for( var i = 0; i < s.length; i++)
+        {
+            n = s.charCodeAt( i );
+            if( n >= 8364 )
+            {
+                n = 128;
+            }
+            r += String.fromCharCode( n - 1 );
+        }
+        return r;
+    }
+
+    function linkTo_UnCryptMailto( s )
+    {
+        location.href=UnCryptMailto( s );
+    }
+    // --> </script>
 	</head>
 	<body>
 
-	<h1>Agilent 2000 Bode plotter</h1>
+	<h1>Bode plotter</h1>
 
-	<a href="bode-plotter-v1.exe" download>Download</a>
+	<p>"Bode plotter" er kompitabel med Agilient/Keysight Technologies "InfiniiVision, DSO-X 2024A"</p>
 
-	"Bode plotter" er kompitabel med Agilient Technologies "InfiniiVision, DSO-X 2024A"
+	<a href="bode-plotter-v1.exe" download>Download</a> | <a href="javascript:linkTo_UnCryptMailto('nbjmup;nbueb2:Atuvefou/tev/el');">Kontakt</a>
 
 	<hr />
 
-	<h2>OPSÆTNING OG ANVENDELSE</h2>
+	<div class="container">
+		<div class="left">
+	<h2 id="1">Opsætning og anvendelse</h2>
 
-	Forbind wavegen til kredsløb
-	Forbind Probe 1 til udgang (målte spænding)
-	Forbind Probe 2 til indgang (ofte der hvor wavegen er forbundet)
-	Forbind med USB A fra pc til USB B (næsten kvadratisk) bagpå oscilloskop
-	Tænd proberne og wavegen
-	Evt. set Acquire Mode til averaging på fx #2, hvilket giver bedre opløsning på data, men tager lidt længere tid for at lave målingerne
+	Forbind wavegen til kredsløb<br />
+	Forbind Probe 1 til udgang (målte spænding)<br />
+	Forbind Probe 2 til indgang (ofte der hvor wavegen er forbundet)<br />
+	Forbind med USB A fra pc til USB B (næsten kvadratisk) bagpå oscilloskop<br />
+	Tænd proberne og wavegen<br />
+	Evt. set Acquire Mode til averaging på fx #2, hvilket giver bedre opløsning på data, men tager lidt længere tid for at lave målingerne<br />
 
-	Åben Bode plotter
-	Indsæt værdierne i de relevante felter
-		Se programmet
-	Afkryds felt for csv-fil, hvis dette ønskes
-		csv-fil gemmes i ???
-	Transferfunction/TF/overførselsfunktion er valgfri, hvor fx den teoretisk beregnede tf kan indsættes.
-		Indsættes på formen: 	Tæller: [Xs^2,Xs,X]
-					Nævner: [Xs^2,Xs,X]
-			Med højeste orden af s til venstre ned til s^0=1 helt til højre i firkantparantesen (ligesom MatLab).
+	Åben Bode plotter<br />
+	Indsæt værdierne i de relevante felter<br />
+		Se programmet<br />
+	Afkryds felt for csv-fil, hvis dette ønskes<br />
+		csv-fil gemmes i ???<br />
+	Transferfunction/TF/overførselsfunktion er valgfri, hvor fx den teoretisk beregnede tf kan indsættes.<br />
+		Indsættes på formen: 	Tæller: [Xs^2,Xs,X]<br />
+					Nævner: [Xs^2,Xs,X]<br />
+			Med højeste orden af s til venstre ned til s^0=1 helt til højre i firkantparantesen (ligesom MatLab).<br />
 
-	TRYK START
-		Bode plotter tænker og skrive den aktuelle frekvens, som også kan aflæses på oscilloskopet
-		Der laves de graf over amplitude og fase i et nyt vindue; samt evt. csv-fil
+	<p>
+	TRYK START<br />
+		Bode plotter tænker og skrive den aktuelle frekvens, som også kan aflæses på oscilloskopet<br />
+		Der laves de graf over amplitude og fase i et nyt vindue; samt evt. csv-fil<br />
+	</p>
+
+	<p>
+	? For at slå tf fra kan man skrive Tæller: [1] og Nævner: [1, 1]. Ellers har Tæller: [1] og Nævner: [1] ikke nogen overførselsfunktion som funktion af s/w<br />
+	</p>
 
 
-	? For at slå tf fra kan man skrive Tæller: [1] og Nævner: [1, 1]. Ellers har Tæller: [1] og Nævner: [1] ikke nogen overførselsfunktion som funktion af s/w
+	Bode-Plotter kan først lukkes, når alle dets grafer er lukket<br />
 
-
-
-	Bode-Plotter kan først lukkes, når alle dets grafer er lukket
+</div>
+	<div class="right">
+		<img src="screenshot.png" height="350px">
+	</div>
+</div>
 	</body>
 </html>
